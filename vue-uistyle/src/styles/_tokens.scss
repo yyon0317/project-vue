@@ -1,0 +1,35 @@
+:root {
+  /* 색상: 사용하는 역할에 따라 이름 지정 */
+  --color-primary: #4338ca;
+  --color-primary-hover: #3730a3;
+
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #cbd5e1;
+
+  --color-danger: #b91c1c;
+  --color-focus: #2563eb;
+
+  /* 공통 간격 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* 모서리 둥글기 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* 글꼴 */
+  --font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+}

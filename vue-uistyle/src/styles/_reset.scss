@@ -1,0 +1,53 @@
+/* ========================================
+   1. 기본 스타일 초기화
+   ======================================== */
+
+/* 너비·높이에 padding과 border 포함 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 페이지 기본 여백 제거 */
+body {
+  margin: 0;
+}
+
+/* 폼 요소의 글꼴을 부모와 통일 */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* 이미지 비율 유지 및 부모 너비 초과 방지 */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 완전히 숨김: 화면과 스크린리더 탐색에서 제외 */
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+
+/* ========================================
+   2. 접근성용 공통 클래스
+   ======================================== */
+
+/* 화면에서만 숨김: 스크린리더에는 텍스트 제공 */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
