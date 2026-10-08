@@ -1,0 +1,21 @@
+/* 사이트 기본 글꼴과 색상 */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* 긴 단어나 주소가 콘텐츠 영역을 넘지 않도록 처리 */
+p,
+li,
+dd {
+  overflow-wrap: anywhere;
+}
+
+/* 키보드로 이동할 때 현재 포커스 위치 표시 */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
