@@ -57,3 +57,8 @@ npm run lint
 ```sh
 npm run storybook
 ```
+
+
+
+### npm install vue-router
+Vue Router는 주소에 맞는 Vue 페이지를 보여 주는 공식 도구

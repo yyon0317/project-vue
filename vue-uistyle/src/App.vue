@@ -1,31 +1,60 @@
 <script setup lang="ts">
-const title = 'Vue UI Style'
+import { nextTick, ref, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
+
+import AppHeader from './components/layout/AppHeader.vue'
+import AppSidebar from './components/layout/AppSidebar.vue'
+
+const route = useRoute()
+const mainElement = ref<HTMLElement | null>(null)
+
+watch(
+  () => route.path,
+  async () => {
+    await nextTick()
+    mainElement.value?.focus({ preventScroll: true })
+  },
+)
 </script>
 
 <template>
-  <main class="guide">
-    <h1 class="guide__title">{{ title }}</h1>
-    <p class="guide__description">
-      재사용 가능한 Vue 컴포넌트와 스타일 가이드
-    </p>
-  </main>
+  <AppHeader />
+
+  <div class="guide-layout">
+    <AppSidebar />
+
+    <main
+      ref="mainElement"
+      class="guide-main"
+      tabindex="-1"
+    >
+      <RouterView />
+    </main>
+  </div>
 </template>
 
 <style scoped lang="scss">
-.guide {
-  padding: 48px 24px;
-  font-family: sans-serif;
+.guide-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
 
-  &__title {
-    margin: 0 0 16px;
-    color: #4338ca;
-    font-size: 32px;
+.guide-main {
+  min-width: 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .guide-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
   }
 
-  &__description {
-    margin: 0;
-    color: #475569;
-    line-height: 1.6;
+  .guide-main {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
   }
 }
 </style>
